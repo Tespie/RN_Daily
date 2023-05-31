@@ -14,10 +14,6 @@ import { formatDate } from '../common/Utils';
 import TextInputWithIcon from '../components/TextInputWithIcon';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
-
-
-// import MyRNETextInput from '../components/MyRNETextInput';
-
 export default function KhataBookScreen() {
 
   const [nam, setNam] = useState('');
@@ -29,7 +25,6 @@ export default function KhataBookScreen() {
   const [mobile1, setMobile1] = useState('');
   const [mobile2, setMobile2] = useState('');
   const [date, setDate] = useState(new Date());
-  // const [date, setDate] = useState(null);
   const [dob, setDob] = useState(null);
 
   const [showDatePicker, setShowDatePicker] = useState(false);
@@ -58,15 +53,8 @@ export default function KhataBookScreen() {
     let bakiRakam = 0;
     console.log('calculateBakiRakam bakiRakam', bakiRakam)
     console.log('calculateBakiRakam bhav', bhav)
-    // if (banaPete & blockNang & bhav) {
-    //   bakiRakam = banaPete - (blockNang * bhav);
-    //   setbakiRakam(bakiRakam.toString())
-    // } else {
-    //   setbakiRakam('0')
-    // }
     if (banaPete & blockNang & bhav) {
       bakiRakam = banaPete - (blockNang * bhav);
-
     }
     setbakiRakam(bakiRakam.toString())
   }
@@ -104,8 +92,6 @@ export default function KhataBookScreen() {
     if (selectedDate) {
       setDate(selectedDate);
     }
-    // setDate(selectedDate.toString());
-    // alert(date)
   };
 
   /**
@@ -114,12 +100,6 @@ export default function KhataBookScreen() {
    * @param {*} selectedDate 
    */
   const formatDateHere = (date) => {
-    // if (date) {
-    //   const day = date.getDate();
-    //   const month = date.getMonth() + 1;
-    //   const year = date.getFullYear();
-    //   return `${day < 10 ? '0' + day : day}-${month < 10 ? '0' + month : month}-${year}`;
-    // }
     if (date) {
       return date ? date.toLocaleDateString('en-GB') : '';
     }
