@@ -165,6 +165,10 @@ dependencies {
     } else {
         implementation jscFlavor
     }
+
+    // added for gradient style button
+    implementation project(':react-native-linear-gradient')
+
 }
 
 apply from: file("../../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesAppBuildGradle(project)

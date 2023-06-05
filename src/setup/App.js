@@ -12,26 +12,30 @@ import AppRouter from '../navigation/AppRouter';
 import { PaperProvider } from 'react-native-paper';
 // import { AppRouter } from '../navigation/AppRouter';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { Provider } from 'react-redux';
+import configureStore from '../redux/store/configureStore';
 
+const store = configureStore();
 
 const App = () => {
   return (
     // <PaperProvider>
-    <SafeAreaProvider>
-    <SafeAreaView style={styles.safeAreaView}>
-      <StatusBar
-        barStyle="light-content"
-        hidden={false}
-        backgroundColor={'black'}
-        translucent={false}
-      />
-      {/* <View style={{flex : 1,alignItems: 'center',justifyContent: 'center'}}>
+    <Provider store={store}>
+      <SafeAreaProvider>
+        <SafeAreaView style={styles.safeAreaView}>
+          <StatusBar
+            barStyle="light-content"
+            hidden={false}
+            backgroundColor={'black'}
+            translucent={false}
+          />
+          {/* <View style={{flex : 1,alignItems: 'center',justifyContent: 'center'}}>
         <Text style={{color: 'red', fontSize: 30}}> Text on App.tjs </Text>
       </View> */}
-      <AppRouter />
-    </SafeAreaView>
-    </SafeAreaProvider>
-    
+          <AppRouter />
+        </SafeAreaView>
+      </SafeAreaProvider>
+    </Provider>
   );
 };
 
